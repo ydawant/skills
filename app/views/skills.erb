@@ -1,0 +1,32 @@
+What are your skills?
+
+Current skills:
+
+<ol>
+  <% @user.proficiencies.each do |proficiency| %>
+    <li><%= Skill.find(proficiency.skill_id).name %></li>
+    <% end %>
+</ol> 
+
+
+
+
+
+
+  <form method="post" id="new_skills" action="/users/skills">
+    <input type= "text" placeholder="skill" name="skill" /><br>
+    Formal Education? <br>
+    <label for="true">Yes</label>
+    <input type="radio" name="formal_education" value="true" />
+    <label for="false">No</label>
+    <input type="radio" name="formal_education" value="false" /></br>
+    Years of experience?<br>
+    <input type= "text" placeholder="years of experience" name="experience" /><br>
+    Type of skill?<br>
+     <label for="technical">Technical</label>
+    <input type="radio" name="context" value="technical"/>
+    <label for="creative">Creative</label>
+    <input type="radio" name="context" value="creative"/></br>
+
+    <input type="submit" id="new_submit" name="submit"></input>
+  </form>
